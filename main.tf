@@ -20,5 +20,5 @@ resource "aws_subnet" "subnet" {
   }
 }
 output "subnet_ids" {
-  value = { for k, v in aws_security_group.default : k => v.id }
+  value = { for k, v in aws_subnet.subnet : k => v.id }
 }
