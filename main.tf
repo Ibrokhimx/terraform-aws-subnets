@@ -1,6 +1,6 @@
 resource "aws_subnet" "main" {
   for_each          = var.subnets
-  vpc_id            = var.module
+  vpc_id            = var.vpc_id
   cidr_block        = each.value.cidr_block #cidrsubnet(data.aws_vpc.main.cidr_block, 4, 1)
   availability_zone = each.value.availability_zone
   tags = {
