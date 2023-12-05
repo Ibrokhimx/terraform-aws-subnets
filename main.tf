@@ -19,3 +19,6 @@ resource "aws_subnet" "subnet" {
     Name = each.value.name
   }
 }
+output "subnet_ids" {
+  value = { for k, v in aws_security_group.default : k => v.id }
+}
